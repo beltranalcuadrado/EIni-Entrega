@@ -1,0 +1,85 @@
+DOPOSoccer - PLANIFICACIÓN DE LAS VERSIONES
+Equipo: Wilmar Edison Beltrán - Santiago Hernández Sarmiento
+
+VERSIÓN 1: PRESENTACIÓN + DOMINIO  (TERMINADA) 
+
+Objetivo: tener un partido Jugador vs Jugador jugable con la física básica,
+los dos tipos de partido y la configuración inicial.
+
+Miniciclos:
+  1.1  Física del jugador (mover, saltar, gravedad, límites) y del balón
+       (rebote, fricción) 
+  1.2  Partido: colisión jugador-balón, patada, goles, reinicio tras
+       gol 
+  1.3  Tipos de partido (por tiempo con muerte súbita / por goles),
+       pausa, terminar, ganador 
+  1.4  Fachada HeadSoccer, POOBSoccerException, Log y pruebas de
+       unidad 
+  1.5  GUI: configuración (modalidad, resolución, personajes, tipo,
+       límite) y juego JvJ 
+
+VERSIÓN 2: PERSISTENCIA + DOMINIO  (TERMINADA)
+
+Objetivo: que los personajes tengan vida y poderes propios, que exista la
+modalidad Jugador vs Máquina y que las partidas se puedan guardar y abrir.
+
+Miniciclos:
+  2.1  Vida, daño de la patada (10 x multiplicadorKick) y aturdimiento
+       de 3 s 
+  2.2  Barra de poder (10 s, +1/4 al recibir gol), aura, clase
+       abstracta Character con Corea, Camerún, Nigeria y EE. UU.
+  2.3  Efectos de los tiros de poder: interfaz Effect (Empuje,
+       Electrocutado, Inconsciente, Confusión) y daño
+       DañoTiro x multiplicadorKick
+  2.4  Sprites de cancha, arcos, balón y personajes
+  2.5  Jugador vs Máquina: interfaz MachineProfile (patrón Strategy)
+       con los perfiles Torpe, Ofensiva, Defensiva y Experta
+  2.6  Persistencia: guardar y abrir partidas (.soccer) desde el
+       menú Archivo
+
+Patrones y decisiones de diseño:
+  - Fachada: HeadSoccer
+  - Clase abstracta + polimorfismo: Character.shoot
+  - Factory Method: Character.createEffect
+  - Strategy: Effect y MachineProfile
+
+VERSIÓN 3: CICLO 3 
+
+Objetivo: entregar la integración de la versión 2 (dominio + persistencia +
+sprites) estable y documentada.
+
+Miniciclos:
+  3.1  Integración del trabajo de ambos integrantes (sprites, poderes,
+       máquina, persistencia) .................................... Hecho
+  3.2  Corrección de la serialización (Effect y MachineProfile
+       serializables) y de la GUI al abrir una partida ............ Hecho
+  3.3  Planificación de las versiones (este documento) ............ Hecho
+
+VERSIÓN 4: CICLO 4 
+
+Objetivo: completar los requisitos funcionales y de visualización que
+faltan, y validar el juego con pruebas de aceptación.
+
+Miniciclos:
+  4.1  Efectos visibles sobre el rival (electrocutado, inconsciente,
+       empujado, confundido)
+  4.2  Tiro de EE. UU.: 8 balones idénticos, 7 falsos que desaparecen
+       al terminar el efecto
+  4.3  Estadísticas speed y jump aplicadas al movimiento (kick y
+       survival ya están en el dominio)
+  4.4  Puntos (100 al ganador, 25 al perdedor) y compra de mejoras
+       (500, 1000, 2000...)
+  4.5  Mantener el progreso de los jugadores (puntos y estadísticas)
+       entre partidas
+  4.6  Pruebas de aceptación y más pruebas de unidad (poderes, efectos,
+       máquina, persistencia)
+  4.7  Diagramas de clases y de secuencia actualizados, retrospectiva
+
+REQUISITOS QUE NO SE VAN A INCLUIR
+
+Por ahora, ninguno. Todos los requisitos del enunciado están planeados
+entre la versión 3 y la 4. Si al cerrar la versión 4 no se alcanza algún
+requisito, se documentará en la retrospectiva final.
+
+Pendiente reconocido: las pruebas de aceptación, que el enunciado pide
+desde la versión 3, se movieron a la versión 4 (miniciclo 4.6).
