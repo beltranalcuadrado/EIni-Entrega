@@ -1,0 +1,58 @@
+DOPOSoccer - PRUEBAS DE ACEPTACIÓN
+Wilmar Edison Beltrán - Santiago Hernández Sarmiento
+
+Prueba 1:  Configurar el juego
+  Requisitos: seleccionar modalidad y perfil de máquina, resolución, personajes y tipo de partido con su límite.
+
+  Pasos:
+  1. Abrir el juego y elegir "Jugador vs Máquina".
+  2. Seleccionar el modo "Ofensiva".
+  3. Escoger resolución "1280x720".
+  4. Seleccionar Nigeria vs Estados Unidos, tipo de ´partido "Por goles" y que sea a 2 goles.
+  Resultado esperado: la ventana abre en 1280x720, cada jugador aparece con el sprite y el nombre de su país, y el jugador 2 juega solo persiguiendo el balón (las flechas no lo controlan).
+
+Prueba 2: Movimientos y daño de la patada
+  Requisitos: mover, saltar y patear. La patada hace daño si el rival está al alcance; con vida en 0 queda aturdido 3 segundos.
+
+  Pasos:
+    1. Partido Jugador vs Jugador. 
+    2. Mover y saltar con los dos jugadores (A/D/W y flechas).
+    3. Patear el balón (S) y luego patear varias veces al rival de cerca.
+    Resultado esperado: los jugadores se mueven sin salirse de la cancha y el balón sale impulsado al patearlo. Cada patada al rival le baja 10 de vida; en 0 se ve gris, 
+    no puede actuar por 3 s y luego su vida vuelve al máximo.
+  
+Prueba 3: Poder, aura y efecto
+  Requisitos: activar el poder con la barra llena, aura visible, tiro de poder con daño y efecto sobre el rival.
+
+  Pasos:
+    1. Seleccionar partido Jugador vs Jugador, Camerún (J1) contra Corea del Sur (J2).
+    2. Presionar E antes de que la barra se llene.
+    3. Esperar 10 s a que se llene y presionar E.
+    4. Tocar el balón hacia el jugador 2.
+    Resultado esperado: En el paso 2 no pasa nada. En el paso 3 aparece el aura y la barra queda en 0. En el paso 4 el aura desaparece, el tiro le quita 60 de vida al
+    jugador 2 y queda electrocutado 3 s (camina lento y no salta).
+
+Prueba 4: Partido por tiempo, ganador y puntos
+  Requisitos: partido por tiempo con muerte súbita en empate; mostrar el ganador y los puntos; información permanente en pantalla.
+
+  Pasos:
+    1. Elegir el partido "Por tiempo", 1 minuto, y dejar que se acabe empatado.
+    2. Meter un gol con el jugador 2.
+    Resultado esperado: durante todo el partido se ven marcador, reloj, personajes y barras de vida y de poder. En empate sigue en muerte
+    súbita; el gol termina el partido y aparece "¡Ganó el Jugador 2!" con +100 y +25 puntos.
+  
+Prueba 5:  Pausar y terminar
+  Requisitos: pausar el juego y terminarlo en cualquier momento.
+
+  Pasos:
+    1. Presionar P, esperar y volver a presionar P.
+    2. Presionar ESC.
+    Resultado esperado: En el paso 1 todo se congela, incluido el reloj, y luego sigue desde donde quedó. En el paso 2 el partido termina y se muestra el mensaje de fin.
+  
+Prueba 6: Salvar y abrir una partida
+  Requisitos: salvar y abrir el estado de un partido.
+  Pasos:
+    1. Seleccionar partido Jugador vs Máquina con marcador 1-0.
+    2. Ir a Archivo, luego a Salvar y guardar como "prueba".
+    3. Ir a Archivo, luego a Nuevo, configurar otra partida y luego ir otra vez a Archivo, Abrir "prueba.soccer".
+    Resultado esperado: aparece "Partida guardada". Al abrir vuelven el marcador 1-0, los personajes, la vida y las barras, y la máquina sigue jugando sola.
